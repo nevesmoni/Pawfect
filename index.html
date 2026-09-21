@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pawfect</title>
+
+    <!-- Google Fonts: Poppins only -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet" href= />
+
+    <!-- Styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #fefefe;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        background-color: #004d40;
+        padding: 20px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        height: 40px;
+        width: auto;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #f2a740;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        background: linear-gradient(
+            to left,
+            rgba(5, 78, 42, 0.726),
+            rgba(88, 80, 80, 0.356)
+          ),
+          url("https://images.unsplash.com/photo-1543466835-00a7907e9de1")
+            center/cover no-repeat;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10%;
+        text-align: center;
+        color: white;
+      }
+
+      .hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      /* FIND PET SECTION */
+      .find-pet-section {
+        background: linear-gradient(
+            to right,
+            rgba(4, 61, 33, 0.788),
+            rgba(88, 80, 80, 0.2)
+          ),
+          url("https://s2-techtudo.glbimg.com/Ke3ItRxZ2lpv0hO5FUv9nMynU0c=/0x0:1260x700/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/P/J/9uLaTFTEybzXyIIi3Njg/em-seguida-clique-no-botao-copiar-ou-toque-no-codigo-do-cupom-desejado-para-copia-lo-35-.png")
+            center/cover no-repeat;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10%;
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 8px black;
+      }
+
+      .find-pet-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .find-pet-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1,
+        .find-pet-section h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img
+          src="https://i.postimg.cc/CKP98hCh/img-8444.png"
+          alt="Pawfect Logo"
+          class="logo-img"
+        />
+        <div class="logo-text">Pawfect</div>
+      </div>
+      <div class="nav-links">
+        <a href="aboutme.html">About us</a>
+        <a href="Report.html">Report pet</a>
+        <a href="Search.html">Search pet</a>
+        <a href="animalshelters.html">Animal shelters</a>
+        <a href="contact.html">Contact</a>
+        <a href="Ourteam.html">Our team</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Making animal rescue scalable, searchable, and shareable!</h1>
+        <p>We ensure every furry friend feels safe & happy</p>
+      </div>
+    </section>
+
+    <!-- FIND YOUR PERFECT PET SECTION -->
+    <section class="find-pet-section">
+      <h1>Find Your Perfect Pet!</h1>
+      <p>Discover your new best friend with our pet matching service!</p>
+    </section>
+  </body>
+</html>

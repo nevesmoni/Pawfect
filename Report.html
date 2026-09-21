@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Pet - Pawfect</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Comfortaa&display=swap"
+    />
+    <link rel="stylesheet" href="Report.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo-container">
+        <img
+          src="https://i.postimg.cc/CKP98hCh/img-8444.png"
+          alt="Pawfect Logo"
+          class="logo-img"
+        />
+        <div class="logo-text">Pawfect</div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About us</a>
+        <a href="Report.html">Report pet</a>
+        <a href="Search.html">Search pet</a>
+        <a href="animalshelters.html">Animal shelters</a>
+        <a href="contact.html">Contact</a>
+        <a href="Ourteam.html">Our team</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Report a Pet</h1>
+        <p>Help us find a home for every animal!</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="header-wrap">
+        <h2>Because every animal deserves a home</h2>
+      </div>
+
+      <form id="PetForm">
+        <input type="text" id="Item" placeholder="What Pet?" required />
+        <input type="text" id="Location" placeholder="Your area" required />
+        <input type="text" id="Contact" placeholder="Contact" />
+        <label for="Pet_type">Type of pet</label>
+        <select id="Pet_type" name="Pet_type" required>
+          <option value="">Select</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Insect">Insect</option>
+          <option value="Reptile">Reptile</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Post</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="post.js"></script>
+  </body>
+</html>

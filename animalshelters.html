@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Shelters</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+      href="shelters.css"
+    />
+    <link rel="stylesheet" href="navbar.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body
+        background-color: #fefefe;
+        color: #333;
+        line-height: 1.6;
+
+
+      .navbar {
+        background-color: #004d40;
+        padding: 20px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        height: 40px;
+        width: auto;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #f2a740;
+      }
+
+      .background-section {
+        background: linear-gradient(
+            to left,
+            rgba(5, 78, 42, 0.726),
+            rgba(88, 80, 80, 0.356)
+          ),
+          url("https://images.unsplash.com/photo-1543466835-00a7907e9de1")
+            center/cover no-repeat;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10%;
+        text-align: center;
+        color: white;
+      }
+
+      .background-section h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+      }
+
+      .background-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .shelters-section {
+        padding: 50px 10%;
+        text-align: center;
+        background-color: #f5f5f5;
+      }
+
+      .shelters-section h1 {
+        font-size: 2.5rem;
+        color: #004d40;
+        margin-bottom: 20px;
+      }
+
+      .shelters-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .buttons {
+        margin-top: 30px;
+      }
+
+      button {
+        background-color: #004d40;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        margin: 10px;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        background-color: #00796b;
+      }
+
+      .shelters {
+        margin-top: 40px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .shelters h2 {
+        color: #004d40;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .shelters ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+      }
+
+      .shelters li {
+        color: #444;
+        font-size: 1.1em;
+        margin: 10px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .shelters li::before {
+        content: "🏡"; /* Cute emoji for each shelter */
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      @media (max-width: 768px) {
+        .background-section h1,
+        .shelters-section h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo-container">
+        <img
+          src="https://i.postimg.cc/CKP98hCh/img-8444.png"
+          alt="Pawfect Logo"
+          class="logo-img"
+        />
+        <div class="logo-text">Pawfect</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About us</a>
+        <a href="Report.html">Report pet</a>
+        <a href="Search.html">Search pet</a>
+        <a href="animalshelters.html">Animal shelters</a>
+        <a href="contact.html">Contact</a>
+        <a href="Ourteam.html">Our team</a>
+      </nav>
+    </header>
+
+    <section class="background-section">
+      <div class="hero-content">
+        <h1>🏠 Animal Shelters</h1>
+        <p>Search for shelters by country!</p>
+      </div>
+    </section>
+
+    <section class="shelters-section">
+      <div class="buttons">
+        <button onclick="showShelters('morocco')">Morocco</button>
+        <button onclick="showShelters('brazil')">Brazil</button>
+        <button onclick="showShelters('india')">India</button>
+        <button onclick="showShelters('germany')">Germany</button>
+        <button onclick="showShelters('spain')">Spain</button>
+        <button onclick="showShelters('vietnam')">Vietnam</button>
+      </div>
+      <div class="shelters">
+        <h2>Our Partner Shelters</h2>
+        <ul id="shelters-ul"></ul>
+      </div>
+    </section>
+
+    <script>
+      const shelters = {
+        morocco: [
+          "Association de défense des animaux et de la nature – Casablanca, Rabat",
+          "Association de sauvetage des animaux en détresse (ASAD) e SPANA – Rabat",
+          "Morocco Animal Aid – Marrakech",
+          "Association You Can Save Me – Agadir",
+          "Nos Amis Pour La Vie – Marrakech",
+        ],
+        brazil: [
+          "Animal Equality Brazil – São Paulo",
+          "Vira‑Lata é Dez – São Paulo",
+          "Associação Adote um Vira Lata - Curitiba, Parana",
+          "Santuário Abraço Animal – São Paulo",
+          "Animais CarentesES - Vila Velha",
+        ],
+        india: [
+          "PAWS – Delhi",
+          "Animal Matter To Me – Mumbai",
+          "Animal Shelter Kanpur – Kanpur",
+          "Apna Home Animal Shelter – Maharashtra",
+          "Kalyani Animal Welfare Foundation – New Delhi",
+        ],
+        germany: [
+          "Soko Tierschutz - Ausburg",
+          "GEH (Endangered Breeds) - Witzenhausen",
+        ],
+        spain: [
+          "SOS Animals (Costa del Sol) - Costa del Sol",
+          "Galgos Del Sol - Murcia",
+          "SOS Galgos (Barcelona) - Barcelona",
+          "El Refugio (Madrid) - Madrid",
+        ],
+        vietnam: [
+          "Vietnam Animal Aid (Hoi An) - Hoi An",
+          "FOUR PAWS Bear Sanctuary - Ninh Binh",
+          "Animals Asia - Multiple headquarters",
+        ],
+      };
+
+      function showShelters(country) {
+        const ul = document.getElementById("shelters-ul");
+        ul.innerHTML = "";
+        const list = shelters[country];
+        if (!list || list.length === 0) {
+          const li = document.createElement("li");
+          li.textContent = "No shelters found for this country.";
+          ul.appendChild(li);
+          return;
+        }
+        list.forEach((name) => {
+          const li = document.createElement("li");
+          li.textContent = name;
+          ul.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>

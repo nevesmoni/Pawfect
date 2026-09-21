@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Pets</title>
+    <link rel="stylesheet" href="Search.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <img
+            src="https://i.postimg.cc/CKP98hCh/img-8444.png"
+            alt="Logo"
+            class="logo-img"
+          />
+          <span class="logo-text">Pawfect</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="aboutme.html">About us</a>
+          <a href="Report.html">Report pet</a>
+          <a href="Search.html">Search pet</a>
+          <a href="animalshelters.html">Animal shelters</a>
+          <a href="contact.html">Contact</a>
+          <a href="Ourteam.html">Our team</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="header-wrap">
+        <h2>Browse for your future pets 🐾</h2>
+      </div>
+
+      <div class="filter-section">
+        <label for="typeFilter"><strong>Filter by Pet Type:</strong></label>
+        <select id="typeFilter">
+          <option value="all">All</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Reptile">Reptile</option>
+          <option value="Insect">Insect</option>
+          <option value="Others">Other</option>
+        </select>
+      </div>
+
+      <div id="postsContainer"></div>
+    </div>
+
+    <style>
+      #postsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      /* Pet card styling */
+      .card {
+        background-color: var(
+          --light-orange
+        ); /* already defined in your :root */
+        border: 1px solid #ffd39e;
+        border-radius: var(--border-radius);
+        padding: 1rem 1.2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Filter dropdown styling */
+      #typeFilter {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        border-radius: var(--border-radius);
+        border: 1px solid #ccc;
+        outline: none;
+        background-color: #fff9f0;
+        margin-top: 0.5rem;
+        transition: border-color 0.3s;
+      }
+
+      #typeFilter:focus {
+        border-color: var(--orange);
+      }
+
+      /* Optional: label above the filter */
+      label[for="typeFilter"] {
+        font-weight: bold;
+        color: var(--blue);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+    </style>
+
+    <script src="script.js"></script>
+    <script src="Browse.js"></script>
+  </body>
+</html>
